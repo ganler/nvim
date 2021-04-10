@@ -1,3 +1,4 @@
 {
-  "clangd.semanticHighlighting": true
+    "clangd.semanticHighlighting": true,
+    "suggest.noselect": false
 }
