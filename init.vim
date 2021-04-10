@@ -9,10 +9,30 @@ call plug#begin("~/.vim/plugged")
   Plug 'jiangmiao/auto-pairs'
   Plug 'morhetz/gruvbox'
   Plug 'scrooloose/nerdcommenter'
+  
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'lighttiger2505/deoplete-vim-lsp'
+  Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
 
 
 "Config Section
+" setting with vim-lsp
+if executable('clangd')
+    augroup lsp_clangd
+        autocmd!
+        autocmd User lsp_setup call lsp#register_server({
+                    \ 'name': 'clangd',
+                    \ 'cmd': {server_info->['clangd']},
+                    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                    \ })
+        autocmd FileType c setlocal omnifunc=lsp#complete
+        autocmd FileType cpp setlocal omnifunc=lsp#complete
+        autocmd FileType objc setlocal omnifunc=lsp#complete
+        autocmd FileType objcpp setlocal omnifunc=lsp#complete
+    augroup end
+endif
+
 " For deoplete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:loaded_python_provider = 0  " I don't use Python2
