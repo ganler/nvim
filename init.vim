@@ -1,17 +1,32 @@
 call plug#begin("~/.vim/plugged")
   " Plugin Section
-  Plug 'dracula/vim'
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'davidhalter/jedi-vim'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'zchee/deoplete-jedi'
+  Plug 'vim-airline/vim-airline'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'morhetz/gruvbox'
+  Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 
 "Config Section
-if (has("termguicolors"))
- set termguicolors
-endif
-syntax enable
-colorscheme dracula
+" For deoplete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+let g:loaded_python_provider = 0  " I don't use Python2
+let g:deoplete#enable_at_startup = 1
+" disable autocompletion, because we use deoplete for completion
+let g:jedi#completions_enabled = 0
+" open the go-to function in split, not another buffer
+let g:jedi#use_splits_not_buffers = "right"
+
+
+colorscheme gruvbox
+set background=dark " use dark mode
+" set background=light " uncomment to use light mode
+
 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
