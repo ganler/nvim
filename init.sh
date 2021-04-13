@@ -19,3 +19,8 @@ which nvim || (wget https://github.com/neovim/neovim/releases/latest/download/nv
 # clangd
 which clangd || conda install -c conda-forge clang-tools
 
+# Update nvim
+nvim +PlugInstall +CocInstall +qa
+
+# coc-snippets
+cp ./ultisnips/* $HOME/.config/coc/ultisnips
