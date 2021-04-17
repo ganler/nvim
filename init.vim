@@ -33,8 +33,8 @@ let g:NERDTreeGitStatusWithFlags = 1
 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '^.DS_Store$']
+let NERDTreeStatusline="%{exists('b:NERDTree')?fnamemodify(b:NERDTree.root.path.str(), ':~'):''}"
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
@@ -75,3 +75,10 @@ inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<TAB>"
 " always show signcolumns
 set signcolumn=yes
 
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
