@@ -4,7 +4,7 @@ set -e
 echo -e "\e[92mIf you found your github connection too slow (possibly you are in CHINA!), please use a mirror website:\e[0m"
 echo -e '\e[92mgit config --global url."https://hub.fastgit.org/".insteadOf "https://github.com/"\e[0m'
 
-[ $CHINA == 1 ] && export ACCELERATE_PREFIX=https://ghproxy.com/ && echo -e "\e[92mUsing mirror: $ACCELERATE_PREFIX\e[0m"
+[[ $CHINA == 1 ]] && export ACCELERATE_PREFIX=https://ghproxy.com/ && echo -e "\e[92mUsing mirror: $ACCELERATE_PREFIX\e[0m"
 
 # neovim.py
 python3 -m pip install neovim
