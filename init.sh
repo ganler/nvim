@@ -28,3 +28,5 @@ nvim +PlugInstall +CocInstall +qa
 # coc-snippets
 [ -e $HOME/.config/coc/ultisnips ] || (mkdir -p $HOME/.config/coc/ultisnips && cp ./ultisnips/* $HOME/.config/coc/ultisnips)
 
+# I know it's your favorite. Copilot!
+nvim +'Copilot setup' +qa
