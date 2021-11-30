@@ -84,3 +84,10 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+
+" Disable Copilot by default
+let g:copilot_filetypes = {
+    \ '*': v:false,
+    \ 'python': v:true,
+    \ }
+
