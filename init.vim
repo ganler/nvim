@@ -1,5 +1,6 @@
 call plug#begin("~/.vim/plugged")
   " Plugin Section
+  Plug 'mlr-msft/vim-loves-dafny', {'for': 'dafny'}
   Plug 'github/copilot.vim'
 
   Plug 'scrooloose/nerdtree'
