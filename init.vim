@@ -17,6 +17,8 @@ call plug#begin("~/.vim/plugged")
   
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+  Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 " Config Section

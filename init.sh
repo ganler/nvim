@@ -7,7 +7,7 @@ echo -e '\e[92mgit config --global url."https://hub.fastgit.org/".insteadOf "htt
 [[ $CHINA == 1 ]] && export ACCELERATE_PREFIX=https://ghproxy.com/ && echo -e "\e[92mUsing mirror: $ACCELERATE_PREFIX\e[0m"
 
 # neovim.py
-python3 -m pip install neovim
+python3 -m pip install neovim black
 
 # NodeJS
 NODE_TAR_GZ=node-v15.9.0-linux-x64.tar.gz
@@ -30,3 +30,4 @@ nvim +PlugInstall +CocInstall +qa
 
 # I know it's your favorite. Copilot!
 nvim +'Copilot setup' +qa
+
